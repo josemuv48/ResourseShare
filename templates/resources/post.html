@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %} {% load static %}
+<!---->
+{% block title %}{{ block.super}} - Post {% endblock title %}
+<!---->
+{% block stylesheet %} {{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+{% endblock stylesheet %}
+<!---->
+{% block content %}
+
+<h1>Share your Resource</h1>
+<div class='resource-form'>
+    <form method="post" action="{% url 'resource-post' %}">
+       {% csrf_token %}
+       <div class="form-element">
+        <label for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          value=""
+          placeholder="Enter Title"
+        />
+      </div>
+      <div class="form-element">
+        <label for="link">Link</label>
+        <input
+          id="link"
+          type="url"
+          name="link"
+          value=""
+          placeholder="Enter URL"
+        />
+      </div>
+      <div class="form-element">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          value=""
+          placeholder="Enter Description"
+        ></textarea>
+      </div>
+      <div class="form-element">
+        <h3>Category</h3>
+        <div class="form-cat">
+          <input id="cat_pl" type="radio" value="pl" />
+          <label for="cat_pl">Programming Language</label>
+        </div>
+        <div class="form-cat">
+          <input id="cat_db" type="radio" value="db" />
+          <label for="cat_db">Databases</label>
+        </div>
+      </div>
+      <div class="form-element">
+        <h3>Tags</h3>
+        <div class="form-tag">
+          <input id="tag_python" type="radio" value="python" />
+          <label for="tag_python">Python</label>
+        </div>
+        <div class="form-tag">
+          <input id="tag_django" type="radio" value="django" />
+          <label for="tag_django">Django</label>
+        </div>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  {% endblock content %}

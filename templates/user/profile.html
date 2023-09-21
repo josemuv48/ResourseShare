@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{block.super}}- Profile
+{% endblock title %}
+{% block content %}
+    <h1>Welcome to {{user.username}}</h1>
+    <div class='viewed_resources'>
+        <h2>Viewed Resources</h2>
+        {% for resource_id, resource_title in request.session.viewed_resources %}
+        <a href={% url "resources-detail" id=resource_id %}>{{resource_title}}</a> </br>
+        {% empty %}
+            <p>No recently viewed resources</p>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}

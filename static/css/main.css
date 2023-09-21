@@ -1,0 +1,29 @@
+body {
+margin:0;
+padding:0;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: bisque;
+text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+.container {
+    width: 100%;
+    min-height: 100%;
+}
+
+main {
+    color: rgb(67, 42, 12);
+    width: 95%;
+    min-height: 450px;
+    padding-top: 5px;
+
+}
+.active{
+    color:green
+}
+.inactive{
+    color:brown
+}

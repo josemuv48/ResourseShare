@@ -1,0 +1,10 @@
+{% load custom_filter %}
+{% if user.is_activ %}
+    <span class='active'>
+        {{user.username|cap_all_but_upper_first}}
+    </span>
+{% else %}
+    <span class='inactive'>
+        {{user.username|cap_all_but_upper_first}}
+    </span>
+{% endif %}

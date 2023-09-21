@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>{{res.title}}</h1>
+    <p><b>User:</b> {{res.user_id.username}}</p>
+    <p><b>Link:<b> {{res.link}}</p>
+    <p><b>Description:<b> {{res.description}}</p>
+    <p><b>Category:<b> {{res.cat_id.cat}}</p>
+    {%if res.all_tags%}
+     <p><b>Tags:<b> {{res.all_tags}}</p>
+    {%else%}
+    <p><b>Tags:<b> None</p>
+    {%endif%}
+    <p><b>Reviews:<b> {{review}}</p> 
+    <p><b>Rating:<b> {{avg_rate}}</p>   
+    <p><b>Posted at:<b> {{res.created_at|date:"M, d, Y"}}</p>  
+</body>
+</html>
